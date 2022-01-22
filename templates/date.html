@@ -1,0 +1,28 @@
+{% extends "main.html" %}
+
+{% block body %}
+  <form name = "dt" action = "/movies/date/time" method="post">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4 school-options-dropdown text-center">
+        <div class="form-group">
+          <label for="sel1"><p style="size: 20px">SELECT DATE : </p></label>
+          <select name="date" class="form-control" id="sel1" required>
+            <option disabled selected value = ""> Date </option>
+            {% for i in dates %}
+             <option value = "{{i}}"> {{i}} </option>
+            {% endfor %}
+          </select>
+        </div>
+    <input type="hidden" value={{selmovie}} name = "selectedmovie">
+    <input type="submit" value = "Next" class="btn btn-primary btn-block">
+    </div>
+
+      <div class="col-md-4">
+      </div>
+    </div>
+
+  </form>
+{% endblock %}

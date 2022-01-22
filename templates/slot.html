@@ -1,0 +1,58 @@
+{% extends "formlay.html" %}
+
+{% block title %}Select Slot{% endblock %}
+
+{% block content %}
+
+
+<br>
+<br>
+<br>
+<div class="row">
+
+  <div class="col-md-3">
+  </div>
+
+  <div class="col-md-6" style="background-color: white; padding: 20px">
+
+
+
+              <form action="/movieadded" method = "post">
+              <table align = "center">
+                  <th style = "width:100px" align = "right">DATE</th>
+                  <th style = "width:100px" align = "right"> </th>
+                  <th style = "width:100px" align = "right">SLOT 1</th>
+                  <th style = "width:100px" align = "right">SLOT 2</th>
+                  <th style = "width:100px" align = "right">SLOT 3</th>
+                  <th style = "width:100px" align = "right">SLOT 4</th>
+                  <th style = "width:100px" align = "right">SLOT 5</th>
+                  <th style = "width:100px" align = "right">SLOT 6</th>
+
+                {% for i in range(gr|length) %}
+                  <tr>
+                    {% for j in range(gr[i]|length) %}
+                      {% if j == 0 %}
+                        <td  align = "right">{{gr[i][j]}}<td>
+                      {% elif gr[i][j] == "nb" %}
+                        <td style = "width:100px"><input type = "checkbox" name = "sl" value = "{{i~'-'~j}}"></td>
+                      {% else %}
+                        <td style = "width:100px">N/A</td>
+                      {% endif %}
+                    {% endfor %}
+                  </tr>
+                {% endfor %}
+              </table>
+              <br>
+              <input type="hidden" name="moviename" value="{{moviename}}">
+              <input type="submit" name="submit" value="submit" class="btn btn-primary btn-block">
+          
+              </form>
+    </div>
+
+
+  <div class="col-md-3">
+  </div>
+
+</div>
+
+{% endblock %}

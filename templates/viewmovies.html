@@ -1,0 +1,40 @@
+{% extends "main.html" %}
+
+{% block body %}
+<form action = "/movies" method = "get">
+	
+	
+            
+            	<ul style="list-style: none;">
+					{% for i in lis %}
+					<li>
+						<div class="row">
+						    <div class="col-md-4">
+						      <!-- <div class="thumbnail"> -->
+						        <!-- <a href="python.jpg" target="_blank"></a> -->
+
+						          <img src="/static/{{i[0]}}" alt="movietime" class="img-thumbnail" width="300px">
+						     </div>
+
+						     <div class="col-md-4">
+						        	<div class="caption" style = "font-size: 20px">
+						        	<br>
+									Movie : {{scoretospace(i[0])}}<br>
+									Director : {{i[1]}}<br>
+									Lead Actor : {{i[2]}}<br>
+									Rating : {{i[3]}}<br>
+									</div>
+
+							</div>
+							
+						</div>
+						<br>
+
+					</li>
+					{% endfor %}
+				</ul>
+
+			
+</form>
+
+{% endblock %}

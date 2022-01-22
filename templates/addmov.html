@@ -1,0 +1,79 @@
+{% extends "formlay.html" %}
+
+{% block title %}Add Movies{% endblock %}
+
+{% block content %}
+<form action = "/slotsel" method="post" enctype="multipart/form-data">
+  <br>
+  <br>
+  <br>
+  <div class = "row">
+    <div class = "col-md-3">
+    </div>
+
+    <div class = "col-md-6" style="background-color: white; padding: 40px">
+      <div class="form-group">
+        <label for="mname">Movie Name :</label>
+        <input type = "text" name = "moviename" required class="form-control" id="mname">
+      </div>
+
+      <div class="form-group">
+        <label for="dname">Director Name :</label>
+        <input type = "text" name = "movdirector" required class="form-control" id="dname">
+      </div>
+
+      <div class="form-group">
+        <label for="lname">Lead Actor :</label>
+        <input type = "text" name = "leadactor" required class="form-control" id="lname">
+      </div>
+      <br>
+      
+
+
+
+
+
+
+
+
+
+      
+      <select name="rating" class="form-control" required>
+            <option disabled selected value = ""> Rating </option>
+            <option value = "1"> 1 </option>
+            <option value = "1.25"> 1.25 </option>
+            <option value = "1.5"> 1.5 </option>
+            <option value = "1.75"> 1.75 </option>
+            <option value = "2"> 2 </option>
+
+            <option value = "2.25"> 2.25 </option>
+            <option value = "2.5"> 2.5 </option>
+            <option value = "2.75"> 2.75 </option>
+            <option value = "3"> 3 </option>
+
+            <option value = "3.25"> 3.25 </option>
+            <option value = "3.5"> 3.5 </option>
+            <option value = "3.75"> 3.75 </option>
+            <option value = "4"> 4 </option>
+
+            <option value = "4.25"> 4.25 </option>
+            <option value = "4.5"> 4.5 </option>
+            <option value = "4.75"> 4.75 </option>
+            <option value = "5"> 5 </option>
+      </select>
+
+      <br>
+      <br>
+      <div class="custom-file mb-3">
+      <input type="file" class="custom-file-input" id="customFile" accept="image/*" name="file">
+      <label class="custom-file-label" for="customFile">Choose file</label>
+      </div>
+
+      <input type="submit" name="submit" value="submit" class="btn btn-primary btn-block">
+    </div>
+
+    <div class = "col-md-3">
+    </div>
+  </div>
+</form>
+{% endblock %}

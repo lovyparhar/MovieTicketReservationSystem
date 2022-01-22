@@ -1,0 +1,78 @@
+{% extends "main.html" %}
+
+{% block body %}
+
+	<form action = "/movies/date/time/seats/registered" name = "farm" method = "post">
+		<div class = "row">
+			<div class = "col-md-2">
+			</div>
+			<div class = "col-md-8">
+				<div class = "screen"> Screen This Way </div>
+			</div>
+			<div class = "col-md-2">
+			</div>
+		</div>
+		<br>
+
+		<div class = "row">
+			<div class = "col-md-2">
+			</div>
+
+			<div class = "col-md-8">
+				<table align = "center">
+					{% for i in allseats %}
+						<tr>
+							{% for j in i[0] %}
+								<td style="text-align: center; vertical-align: top;" id = "khaali">
+									{% if j in bookeds %}
+										<div class = "replace"></div>
+									{% else %}
+										<input class = "cheku" type = "checkbox" value = "{{j}}" name = "ts">
+									{% endif %}
+								</td>
+							{% endfor %}
+
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+							<td> </td><td> </td><td> </td><td> </td>
+
+							{% for j in i[1] %}
+								<td style="text-align: center; vertical-align: top;" id = "khaali">
+									{% if j in bookeds %}
+										<div class = "replace"></div>
+									{% else %}
+										<input class = "cheku" type = "checkbox" value = "{{j}}" name = "ts">
+									{% endif %}
+								</td>
+							{% endfor %}
+						</tr>
+					{% endfor %}
+
+				</table>
+				<br>
+				<input type="hidden" name="selectedtime" value="{{seltime}}">
+				<input type="hidden" name="selectedmovie" value="{{selmovie}}">
+				<input type="hidden" name="selecteddate" value="{{seldate}}">
+			</div>
+
+			<div class = "col-md-2">
+			</div>
+		</div>
+
+		<div class = "row">
+			<div class = "col-md-4">
+			</div>
+			<div class = "col-md-4">
+				<input type = "submit" value = "Confirm Seats" class="btn btn-primary btn-block">
+			</div>
+			<div class = "col-md-4">
+			</div>
+		</div>
+	</form>
+{% endblock %}

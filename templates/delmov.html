@@ -1,0 +1,10 @@
+{% extends "formlay.html" %}
+
+{% block title %}Delete Movie{% endblock %}
+
+{% block content %}
+<form action = "/slotsel" method="post">
+  Movie Name : <input type = "text" name = "moviename" required>
+  <input type="submit" name="submit" value="submit">
+</form>
+{% endblock %}

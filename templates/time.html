@@ -1,0 +1,29 @@
+{% extends "main.html" %}
+
+{% block body %}
+  <form name = "t" action = "/movies/date/time/seats" method="post">
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+
+      <div class="col-md-4 school-options-dropdown text-center">
+        <div class="form-group">
+          <label for="sel1"><p style="size: 20px">SELECT TIMESLOT : </p></label>
+          <select name="time" class="form-control" id="sel1" required>
+              <option disabled selected value = ""> Time </option>
+              {% for i in times %}
+                <option value = "{{i}}"> {{totime[i]}} </option>
+              {% endfor %}
+          </select>
+        </div>
+          <input type="hidden" name="selectedmovie" value="{{selmovie}}">
+          <input type="hidden" name="selecteddate" value="{{seldate}}">
+          <input type="submit" value = "Next" class="btn btn-primary btn-block">
+
+
+      <div class="col-md-4">
+      </div>
+    </div>
+
+  </form>
+{% endblock %}
